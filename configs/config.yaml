@@ -1,0 +1,53 @@
+agent:
+  name: WinGuard-Go
+  device_name: DESKTOP-01
+  dashboard_addr: 127.0.0.1:8765
+
+bruteforce:
+  enabled: true
+  threshold: 5
+  window_minutes: 10
+  block_minutes: 1440
+
+firewall:
+  enabled: true
+  dry_run: false
+  rule_prefix: WinGuard-Go
+
+outbound:
+  enabled: true
+  mode: block
+  scan_interval_seconds: 10
+  suspicious_paths:
+    - AppData\\Local\\Temp
+    - AppData\\Roaming
+    - Downloads
+  blocklist:
+    - msedge.exe
+    - SDXHelper.exe
+    - remoting_host.exe
+    - gk.exe
+    - WinStore.App.exe
+    - Codex Installer.exe
+    - taskhostw.exe
+  allowlist:
+    - C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe
+    - C:\\Program Files\\Mozilla Firefox\\firefox.exe
+    - C:\\Windows\\System32\\svchost.exe
+    - C:\\WINDOWS\\system32\\backgroundTaskHost.exe
+    - C:\\Windows\\System32\\smartscreen.exe
+    - C:\\Windows\\SystemApps\\Microsoft.Windows.Search_cw5n1h2txyewy\\SearchApp.exe
+    - C:\\Windows\\SystemApps\\Microsoft.LockApp_cw5n1h2txyewy\\LockApp.exe
+    - C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe
+    - Code.exe
+    - codex.exe
+    - MsMpEng.exe
+    - MpDefenderCoreService.exe
+
+telegram:
+  enabled: false
+  bot_token: PUT_TOKEN_HERE
+  chat_id: PUT_CHAT_ID_HERE
+
+storage:
+  path: data/winguard.db
