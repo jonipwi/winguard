@@ -73,6 +73,10 @@ Update these values before installation to ensure the agent behaves correctly fo
    ```
 4. Verify that the `WinGuardGo` service is installed and running.
 
+## Dashboard screenshot
+
+![WinGuard-Go dashboard preview](./dashboard-screenshot.jpg)
+
 ## Notes
 
 - The PowerShell setup script assumes the working directory is the `dist` folder.
